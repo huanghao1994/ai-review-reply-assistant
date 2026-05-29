@@ -186,7 +186,7 @@ function fallbackSafeReplies({ industry, reviewText }) {
   const analysis = detectIssue(reviewText);
   const base = {
     "诚恳道歉": {
-      professional: `您好，看到您反馈的${analysis.issueType}问题，我们已经认真记录。这次体验没有达到您的预期，我们会尽快核查对应订单和门店流程，并把问题同步给相关同事复盘改进。感谢您指出具体问题。`,
+      professional: `您好，看到您反馈的${analysis.issueType}，我们已经认真记录。这次体验没有达到您的预期，我们会尽快核查对应订单和门店流程，并把问题同步给相关同事复盘改进。感谢您指出具体问题。`,
       friendly: `您好，看到您的反馈我们挺重视的。这次${industry}体验让您不满意，确实需要我们好好复盘。我们会核查订单细节和门店处理流程，把该改的地方尽快改到位。`,
       firm: `感谢反馈。您提到的问题我们会按订单记录和门店流程逐项核查，如存在不到位的环节，会立即做内部复盘和流程修正，避免类似体验再次发生。`
     },
