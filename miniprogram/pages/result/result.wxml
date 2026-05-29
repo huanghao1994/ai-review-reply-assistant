@@ -1,0 +1,35 @@
+<view class="page">
+  <view wx:if="{{result}}" class="section report-hero">
+    <view>
+      <view class="eyebrow">AI 分析结果</view>
+      <view class="report-title">评价处理报告</view>
+    </view>
+    <view class="priority-badge">{{result.priority}}</view>
+  </view>
+
+  <view wx:if="{{result}}" class="section insight-grid">
+    <view class="insight-card">
+      <view class="insight-label">差评原因</view>
+      <view class="insight-value">{{result.reason}}</view>
+    </view>
+    <view class="insight-card">
+      <view class="insight-label">处理优先级</view>
+      <view class="insight-value">{{result.priority}}</view>
+    </view>
+  </view>
+
+  <view wx:for="{{replyCards}}" wx:key="key" class="section panel">
+    <view class="card-head">
+      <view class="label">{{item.title}}</view>
+      <button size="mini" class="copy" bindtap="copyText" data-text="{{item.text}}">复制</button>
+    </view>
+    <view class="reply-text">{{item.text}}</view>
+  </view>
+
+  <view wx:if="{{result}}" class="section panel">
+    <view class="label">内部复盘建议</view>
+    <view class="suggestion">{{result.actionSuggestion}}</view>
+  </view>
+
+  <button class="button-primary back-btn" bindtap="goHome">继续处理下一条</button>
+</view>

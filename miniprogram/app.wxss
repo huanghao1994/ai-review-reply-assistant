@@ -1,0 +1,94 @@
+page {
+  background: #eef6ff;
+  color: #0f172a;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 28rpx;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 28rpx;
+  box-sizing: border-box;
+}
+
+.section {
+  margin-bottom: 28rpx;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1rpx solid #cfe0f5;
+  border-radius: 18rpx;
+  padding: 28rpx;
+  box-shadow: 0 16rpx 38rpx rgba(37, 99, 235, 0.08);
+}
+
+.label {
+  color: #334155;
+  font-size: 26rpx;
+  font-weight: 700;
+  margin-bottom: 14rpx;
+}
+
+.hint {
+  color: #64748b;
+  font-size: 24rpx;
+  line-height: 1.55;
+}
+
+.button-primary {
+  background: #2563eb;
+  border-radius: 14rpx;
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 14rpx 30rpx rgba(37, 99, 235, 0.28);
+}
+
+.button-secondary {
+  background: #ffffff;
+  border: 1rpx solid #bad3f1;
+  border-radius: 14rpx;
+  color: #1d4ed8;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.pill {
+  background: #e0f2fe;
+  border: 1rpx solid #bfdbfe;
+  border-radius: 999rpx;
+  color: #075985;
+  font-weight: 600;
+  padding: 12rpx 22rpx;
+}
+
+.pill.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.textarea {
+  background: #f8fbff;
+  border: 1rpx solid #bad3f1;
+  border-radius: 14rpx;
+  box-sizing: border-box;
+  line-height: 1.5;
+  min-height: 220rpx;
+  padding: 22rpx;
+  width: 100%;
+}
+
+.input {
+  background: #f8fbff;
+  border: 1rpx solid #bad3f1;
+  border-radius: 14rpx;
+  box-sizing: border-box;
+  height: 88rpx;
+  padding: 0 22rpx;
+  width: 100%;
+}

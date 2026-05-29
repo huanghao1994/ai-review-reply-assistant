@@ -1,0 +1,20 @@
+<view class="page">
+  <view class="history-head">
+    <view class="history-title">处理记录</view>
+    <view class="history-subtitle">复用过往差评回复，沉淀门店服务案例。</view>
+  </view>
+
+  <view wx:if="{{history.length === 0}}" class="empty panel">
+    <view class="empty-title">暂无历史记录</view>
+    <view class="hint">生成过的差评回复会保存在本机，方便再次复制。</view>
+  </view>
+
+  <view wx:for="{{history}}" wx:key="id" class="section panel item" bindtap="openItem" data-index="{{index}}">
+    <view class="meta">
+      <text>{{item.industry}} · {{item.tone}}</text>
+      <text class="reason-tag">{{item.result.reason}}</text>
+    </view>
+    <view class="review">{{item.reviewText}}</view>
+    <view class="preview">{{item.result.publicReply}}</view>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="settings-head">
+    <view class="settings-title">工作台设置</view>
+    <view class="settings-subtitle">配置本地预览接口和使用记录。</view>
+  </view>
+
+  <view class="section panel">
+    <view class="label">后端接口地址</view>
+    <input class="input" placeholder="https://api.example.com" value="{{apiBaseUrl}}" bindinput="onApiInput" />
+    <view class="hint">上线后这里应使用已备案、已配置 HTTPS、已加入小程序 request 合法域名的后端域名。</view>
+  </view>
+
+  <view class="section panel">
+    <view class="label">使用次数</view>
+    <view class="usage">已生成 {{usage.total || 0}} 次</view>
+    <view class="hint">正式版可在服务端控制免费次数、会员和次数包。</view>
+  </view>
+
+  <button class="button-primary" bindtap="save">保存设置</button>
+  <button class="button-secondary danger" bindtap="clearHistory">清空历史</button>
+</view>

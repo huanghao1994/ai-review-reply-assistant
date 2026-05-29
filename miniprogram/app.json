@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/result/result",
+    "pages/history/history",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "navigationBarTitleText": "评价处理工作台",
+    "navigationBarBackgroundColor": "#2563eb",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#eef6ff"
+  },
+  "tabBar": {
+    "color": "#6b7280",
+    "selectedColor": "#2563eb",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "生成"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "历史"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "设置"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

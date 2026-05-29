@@ -1,0 +1,27 @@
+.settings-head {
+  margin: 10rpx 4rpx 28rpx;
+}
+
+.settings-title {
+  color: #0f172a;
+  font-size: 40rpx;
+  font-weight: 900;
+}
+
+.settings-subtitle {
+  color: #64748b;
+  font-size: 25rpx;
+  line-height: 1.5;
+  margin-top: 10rpx;
+}
+
+.usage {
+  color: #1d4ed8;
+  font-size: 40rpx;
+  font-weight: 800;
+  margin-bottom: 12rpx;
+}
+
+.danger {
+  margin-top: 22rpx;
+}

@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: ai-review-reply-server
+    runtime: node
+    rootDir: server
+    buildCommand: ""
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8787
+      - key: AI_BASE_URL
+        value: https://api.deepseek.com
+      - key: AI_MODEL
+        value: deepseek-chat
+      - key: AI_API_KEY
+        sync: false
