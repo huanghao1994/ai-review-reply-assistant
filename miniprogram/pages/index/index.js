@@ -3,9 +3,9 @@ const api = require("../../utils/api");
 Page({
   data: {
     industries: ["外卖餐饮", "奶茶饮品", "民宿酒店", "美甲美业", "宠物门店", "教培机构"],
-    tones: ["诚恳道歉", "补偿安抚", "专业克制", "亲切接地气"],
+    tones: ["专业克制", "亲切自然", "强硬克制"],
     industry: "外卖餐饮",
-    tone: "诚恳道歉",
+    tone: "专业克制",
     reviewText: "",
     loading: false
   },
@@ -31,9 +31,8 @@ Page({
 
     this.setData({ loading: true });
     try {
-      const result = await api.generateReply({
+      const result = await api.generateSafeReply({
         industry: this.data.industry,
-        tone: this.data.tone,
         reviewText
       });
 
@@ -47,6 +46,7 @@ Page({
         industry: this.data.industry,
         tone: this.data.tone,
         reviewText,
+        mode: "safe",
         result,
         createdAt: new Date().toISOString()
       });

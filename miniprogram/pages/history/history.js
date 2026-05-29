@@ -4,7 +4,17 @@ Page({
   },
 
   onShow() {
-    this.setData({ history: wx.getStorageSync("history") || [] });
+    const history = (wx.getStorageSync("history") || []).map((item) => {
+      const result = item.result || {};
+      return {
+        ...item,
+        issueLabel: result.analysis ? result.analysis.issueType : result.reason || "已处理",
+        previewText: result.replies
+          ? result.replies["诚恳道歉"].professional
+          : result.publicReply || ""
+      };
+    });
+    this.setData({ history });
   },
 
   openItem(event) {

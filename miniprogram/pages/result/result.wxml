@@ -4,21 +4,61 @@
       <view class="eyebrow">AI 分析结果</view>
       <view class="report-title">评价处理报告</view>
     </view>
-    <view class="priority-badge">{{result.priority}}</view>
+    <view class="priority-badge">{{reportBadge}}</view>
   </view>
 
-  <view wx:if="{{result}}" class="section insight-grid">
+  <view wx:if="{{result && result.analysis}}" class="section insight-grid">
     <view class="insight-card">
-      <view class="insight-label">差评原因</view>
-      <view class="insight-value">{{result.reason}}</view>
+      <view class="insight-label">问题类型</view>
+      <view class="insight-value">{{result.analysis.issueType}}</view>
     </view>
     <view class="insight-card">
-      <view class="insight-label">处理优先级</view>
-      <view class="insight-value">{{result.priority}}</view>
+      <view class="insight-label">怒气值</view>
+      <view class="insight-value">{{result.analysis.anger}}%</view>
     </view>
   </view>
 
-  <view wx:for="{{replyCards}}" wx:key="key" class="section panel">
+  <view wx:if="{{result && result.analysis}}" class="section panel">
+    <view class="label">核心矛盾</view>
+    <view class="keywords">{{result.analysis.keywords}}</view>
+  </view>
+
+  <view wx:if="{{result && result.replies}}" class="section panel">
+    <view class="label">选择回复角度</view>
+    <view class="option-list">
+      <view wx:for="{{angles}}" wx:key="key" class="option-card {{selectedAngle === item.key ? 'active' : ''}}" bindtap="selectAngle" data-value="{{item.key}}">
+        <view class="option-title">{{item.name}}</view>
+        <view class="option-desc">{{item.desc}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{result && result.replies}}" class="section panel">
+    <view class="label">选择回复风格</view>
+    <view class="style-row">
+      <view wx:for="{{styles}}" wx:key="key" class="style-chip {{selectedStyle === item.key ? 'active' : ''}}" bindtap="selectStyle" data-value="{{item.key}}">{{item.name}}</view>
+    </view>
+  </view>
+
+  <view wx:if="{{result && result.replies}}" class="section panel result-card">
+    <view class="card-head">
+      <view class="label">安全回复</view>
+      <button size="mini" class="copy" bindtap="copyText" data-text="{{finalReply}}">复制</button>
+    </view>
+    <view class="reply-text">{{finalReply}}</view>
+    <view wx:if="{{compensationUpdated}}" class="success-tip">补偿信息已加入当前回复</view>
+  </view>
+
+  <view wx:if="{{result && result.replies}}" class="section panel">
+    <view class="label">需要补偿时再追加</view>
+    <view class="hint compensation-hint">默认回复不会承诺退款、优惠券、重做等成本动作。确认处理方案后，再选择补偿方式。</view>
+    <view class="compensation-row">
+      <view wx:for="{{compensationActions}}" wx:key="*this" class="compensation-chip {{compensationProcessing ? 'disabled' : ''}}" bindtap="selectCompensation" data-value="{{item}}">{{item}}</view>
+    </view>
+    <view wx:if="{{compensationProcessing}}" class="loading-text">正在融入补偿信息...</view>
+  </view>
+
+  <view wx:if="{{replyCards.length}}" wx:for="{{replyCards}}" wx:key="key" class="section panel">
     <view class="card-head">
       <view class="label">{{item.title}}</view>
       <button size="mini" class="copy" bindtap="copyText" data-text="{{item.text}}">复制</button>

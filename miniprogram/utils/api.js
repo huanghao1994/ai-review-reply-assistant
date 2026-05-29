@@ -30,5 +30,13 @@ function request(path, data) {
 module.exports = {
   generateReply(payload) {
     return request("/api/generate", payload);
+  },
+
+  generateSafeReply(payload) {
+    return request("/api/generate-safe", payload);
+  },
+
+  addCompensation(payload) {
+    return request("/api/add-compensation", payload);
   }
 };

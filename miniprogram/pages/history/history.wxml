@@ -12,9 +12,9 @@
   <view wx:for="{{history}}" wx:key="id" class="section panel item" bindtap="openItem" data-index="{{index}}">
     <view class="meta">
       <text>{{item.industry}} · {{item.tone}}</text>
-      <text class="reason-tag">{{item.result.reason}}</text>
+      <text class="reason-tag">{{item.issueLabel}}</text>
     </view>
     <view class="review">{{item.reviewText}}</view>
-    <view class="preview">{{item.result.publicReply}}</view>
+    <view class="preview">{{item.previewText}}</view>
   </view>
 </view>
