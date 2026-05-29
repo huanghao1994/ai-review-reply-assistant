@@ -4,3 +4,4 @@ node_modules/
 *.log
 miniprogram/project.private.config.json
 .superpowers/
+.deploy-keys/
