@@ -1,6 +1,6 @@
 App({
   globalData: {
-    apiBaseUrl: "http://localhost:8787",
+    apiBaseUrl: "https://ai-review-reply-assistant.onrender.com",
     trialLimit: 5
   },
 
